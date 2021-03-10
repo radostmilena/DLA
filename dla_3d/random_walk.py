@@ -52,7 +52,7 @@ class random_walk:
     """
         sum_ = []
 
-        for i in range(x0-1, x0+1, 1): #use cython on these loops?
+        for i in range(x0-1, x0+1, 1): 
             for j in range(y0-1, y0+1, y0):
                 for k in range(z0-1, z0+1, z0):
                     if (sum([i, j, k]) == sum([x0, y0, z0]) + 1 or sum([i, j, k]) == sum([x0, y0, z0]) - 1) and self.grid[i, j, k] == 1:
