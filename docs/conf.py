@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'DLA_3d'
+project = 'DLA 3D'
 copyright = '2021, radostmilena'
 author = 'radostmilena'
 

@@ -1,17 +1,17 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Welcome to DLA_3d’s documentation! &#8212; DLA_3d  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the documentation of the dla_3d package! &#8212; DLA 3D  documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
    
@@ -31,12 +31,12 @@
           <div class="body" role="main">
             
   <div class="section" id="welcome-to-dla-3d-s-documentation">
-<h1>Welcome to DLA_3d’s documentation!<a class="headerlink" href="#welcome-to-dla-3d-s-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>Welcome to the documentation for the dla_3d package!<a class="headerlink" href="#welcome-to-dla-3d-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<span class="target" id="module-dla_3d.initialize_system"></span><dl class="class">
+<span class="target" id="module-dla_3d.initialize_system"></span><dl class="py class">
 <dt id="dla_3d.initialize_system.initialize_system">
-<em class="property">class </em><code class="sig-prename descclassname">dla_3d.initialize_system.</code><code class="sig-name descname">initialize_system</code><span class="sig-paren">(</span><em class="sig-param">k</em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.initialize_system.initialize_system" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">dla_3d.initialize_system.</span></code><code class="sig-name descname"><span class="pre">initialize_system</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.initialize_system.initialize_system" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -53,23 +53,41 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="py method">
+<dt id="dla_3d.initialize_system.initialize_system.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.initialize_system.initialize_system.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor for this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>k</strong><span class="classifier">int</span></dt><dd><p>exponent</p>
+</dd>
+<dt><strong>N</strong><span class="classifier">int</span></dt><dd><p>base</p>
+</dd>
+<dt><strong>grid</strong><span class="classifier">array-like</span></dt><dd><p>3d grid of dimensions N x N x N</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="dla_3d.initialize_system.initialize_system.find_center">
-<code class="sig-name descname">find_center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.initialize_system.initialize_system.find_center" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">find_center</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.initialize_system.initialize_system.find_center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the center of the grid and fill it.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="dla_3d.initialize_system.initialize_system.initialize_grid">
-<code class="sig-name descname">initialize_grid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.initialize_system.initialize_system.initialize_grid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">initialize_grid</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.initialize_system.initialize_system.initialize_grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the grid using the parameters from the constructor.</p>
 </dd></dl>
 
 </dd></dl>
 
-<span class="target" id="module-dla_3d.random_walk"></span><dl class="class">
+<span class="target" id="module-dla_3d.random_walk"></span><dl class="py class">
 <dt id="dla_3d.random_walk.random_walk">
-<em class="property">class </em><code class="sig-prename descclassname">dla_3d.random_walk.</code><code class="sig-name descname">random_walk</code><span class="sig-paren">(</span><em class="sig-param">grid</em>, <em class="sig-param">center</em>, <em class="sig-param">inner_radius</em>, <em class="sig-param">outer_radius</em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.random_walk.random_walk" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">dla_3d.random_walk.</span></code><code class="sig-name descname"><span class="pre">random_walk</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.random_walk.random_walk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -82,16 +100,36 @@
 <td><p>Initializes the position of the random walkers.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#dla_3d.random_walk.random_walk.test_vicinity" title="dla_3d.random_walk.random_walk.test_vicinity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_vicinity</span></code></a>(grid, center, x0, y0, z0)</p></td>
-<td><p>Search surroundings of a point for filled points and check distance from center.</p></td>
+<td><p>Search surroundings of a point for filled points  and check distance from center.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#dla_3d.random_walk.random_walk.walk" title="dla_3d.random_walk.random_walk.walk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">walk</span></code></a>(grid)</p></td>
 <td><p>Random walk of an initialized walker.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="py method">
+<dt id="dla_3d.random_walk.random_walk.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.random_walk.random_walk.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor for random walk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>grid</strong><span class="classifier">array-like</span></dt><dd><p>Three-dimensional grid with seed in the center, initialized by the initialize_system class.</p>
+</dd>
+<dt><strong>center</strong><span class="classifier">array-like</span></dt><dd><p>Position of the seed.</p>
+</dd>
+<dt><strong>inner_radius</strong><span class="classifier">int</span></dt><dd><p>Radius of the inner sphere, where random walkers start their path.</p>
+</dd>
+<dt><strong>outer_radius :</strong></dt><dd><p>Radius of the outer sphere. If a walker leaves the outer sphere, its walk will be stopped and a new walker will be released.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="dla_3d.random_walk.random_walk.initialize_walk">
-<code class="sig-name descname">initialize_walk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.random_walk.random_walk.initialize_walk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">initialize_walk</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.random_walk.random_walk.initialize_walk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes the position of the random walkers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -103,43 +141,38 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="dla_3d.random_walk.random_walk.test_vicinity">
-<code class="sig-name descname">test_vicinity</code><span class="sig-paren">(</span><em class="sig-param">grid</em>, <em class="sig-param">center</em>, <em class="sig-param">x0</em>, <em class="sig-param">y0</em>, <em class="sig-param">z0</em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.random_walk.random_walk.test_vicinity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Search surroundings of a point for filled points and check distance from center.</p>
-<dl class="field-list">
+<code class="sig-name descname"><span class="pre">test_vicinity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.random_walk.random_walk.test_vicinity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search surroundings of a point for filled points 
+and check distance from center.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>grid</strong><span class="classifier">array-like</span></dt><dd><blockquote>
-<div><p>Initialized grid with filled center</p>
-</div></blockquote>
-<dl class="simple">
-<dt>center<span class="classifier">array-like</span></dt><dd><p>Position of the center</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>grid</strong><span class="classifier">array-like</span></dt><dd><p>Initialized grid with filled center.</p>
 </dd>
-<dt>x0, y0, z0<span class="classifier">int</span></dt><dd><p>Position of the point in question</p>
+<dt><strong>center</strong><span class="classifier">array-like</span></dt><dd><p>Position of the center.</p>
 </dd>
-</dl>
+<dt><strong>x0, y0, z0</strong><span class="classifier">int</span></dt><dd><p>Position of the point in question.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl>
-<dt>dist :</dt><dd><blockquote>
-<div><p>Distance of the point from the center.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>isum<span class="classifier">int</span></dt><dd><p>Sum of grid values in the vicinity of the point. Neighbour points can only vary in one point, i.e. [x0, y0, z+1] or [x0-1, y0, z0], but not [x0+1, y0+1, z0].</p>
+<dd class="field-even"><dl class="simple">
+<dt><strong>dist</strong><span class="classifier">int</span></dt><dd><p>Distance of the point from the center.</p>
 </dd>
-</dl>
+<dt><strong>isum</strong><span class="classifier">int</span></dt><dd><p>Sum of grid values in the vicinity of the point. 
+Neighbour points can only vary in one point, 
+i.e. [x0, y0, z+1] or [x0-1, y0, z0], but not [x0+1, y0+1, z0].</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="dla_3d.random_walk.random_walk.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">grid</em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.random_walk.random_walk.walk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">walk</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dla_3d.random_walk.random_walk.walk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Random walk of an initialized walker.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -170,7 +203,7 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">DLA_3d</a></h1>
+<h1 class="logo"><a href="#">DLA 3D</a></h1>
 
 
 
@@ -214,7 +247,7 @@
       &copy;2021, radostmilena.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

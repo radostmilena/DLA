@@ -16,6 +16,7 @@ Welcome to DLA_3d's documentation!
    :undoc-members:
    :show-inheritance:
    :inherited-members:
+   :special-members: __init__
 
 .. automodule:: dla_3d.random_walk
    :members:
@@ -23,6 +24,7 @@ Welcome to DLA_3d's documentation!
    :undoc-members:
    :show-inheritance:
    :inherited-members:
+   :special-members: __init__
 
 Indices and tables
 ==================
