@@ -42,23 +42,26 @@ class random_walk:
 
     def test_vicinity(self, grid, center, x0, y0, z0):
         """
-        Search surroundings of a point for filled points and check distance from center.
+        Search surroundings of a point for filled points 
+        and check distance from center. 
 
-           Parameters
-           ----------
-           grid : array-like
-                 Initialized grid with filled center
-           center : array-like
-                 Position of the center
-           x0, y0, z0 : int
-                 Position of the point in question
+        Parameters
+        ----------
+        grid : array-like
+               Initialized grid with filled center.
+        center : array-like
+                 Position of the center.
+        x0, y0, z0 : int
+                     Position of the point in question.
 
-           Returns
-           -------
-           dist :
-                Distance of the point from the center.
-           isum : int
-                Sum of grid values in the vicinity of the point. Neighbour points can only vary in one point, i.e. [x0, y0, z+1] or [x0-1, y0, z0], but not [x0+1, y0+1, z0].
+        Returns
+        -------
+        dist : int 
+               Distance of the point from the center.
+        isum : int
+               Sum of grid values in the vicinity of the point. 
+               Neighbour points can only vary in one point, 
+               i.e. [x0, y0, z+1] or [x0-1, y0, z0], but not [x0+1, y0+1, z0].
         """
         dist = np.sqrt((x0-center[0])**2 + (y0-center[1])**2 + (z0-center[2])**2)
         if dist > self.inner_radius:
