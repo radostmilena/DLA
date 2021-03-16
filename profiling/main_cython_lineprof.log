@@ -1,0 +1,194 @@
+Timer unit: 1e-06 s
+
+Total time: 6e-06 s
+File: /media/rherboth/Windows8_OS/Users/Radost Milena/Documents/1 UPPSALA/project_applmech/python_course/project/DLA/dla_3d/initialize_system.py
+Function: __init__ at line 5
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     5                                               @profile
+     6                                               def __init__(self, k):
+     7                                                   """
+     8                                                   Constructor for this class.
+     9                                           
+    10                                                   Parameters
+    11                                                   ----------
+    12                                                   k : int
+    13                                                       exponent
+    14                                                   N : int
+    15                                                       base
+    16                                                   grid : array-like
+    17                                                       3d grid of dimensions N x N x N
+    18                                                   """
+    19         1          3.0      3.0     50.0          self.k = k
+    20         1          3.0      3.0     50.0          self.N = 2**self.k
+
+Total time: 2.5e-05 s
+File: /media/rherboth/Windows8_OS/Users/Radost Milena/Documents/1 UPPSALA/project_applmech/python_course/project/DLA/dla_3d/initialize_system.py
+Function: initialize_grid at line 21
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    21                                               @profile
+    22                                               def initialize_grid(self):
+    23                                                   """Initialize the grid using the parameters from the constructor."""
+    24         1         24.0     24.0     96.0          self.grid = np.zeros([self.N, self.N, self.N])
+    25         1          1.0      1.0      4.0          return self.grid
+
+Total time: 5.3e-05 s
+File: /media/rherboth/Windows8_OS/Users/Radost Milena/Documents/1 UPPSALA/project_applmech/python_course/project/DLA/dla_3d/initialize_system.py
+Function: find_center at line 26
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    26                                               @profile
+    27                                               def find_center(self):
+    28                                                   """Find the center of the grid and fill it."""
+    29         1         29.0     29.0     54.7          x = np.int(np.rint((len(self.grid[0][0]))/2))
+    30         1         13.0     13.0     24.5          center = np.array([x, x, x])
+    31         1         10.0     10.0     18.9          self.grid[center[0]][center[1]][center[2]] = 1
+    32         1          1.0      1.0      1.9          return self.grid, center
+
+Total time: 6e-06 s
+File: /media/rherboth/Windows8_OS/Users/Radost Milena/Documents/1 UPPSALA/project_applmech/python_course/project/DLA/dla_3d/random_walk.py
+Function: __init__ at line 6
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     6                                               @profile
+     7                                               def __init__(self, grid, center, inner_radius, outer_radius):
+     8                                                   """
+     9                                                   Constructor for random walk.
+    10                                           
+    11                                                   Parameters
+    12                                                   ----------
+    13                                                   grid : array-like
+    14                                                          Three-dimensional grid with seed in the center, initialized by the initialize_system class.
+    15                                                   center : array-like
+    16                                                            Position of the seed.
+    17                                                   inner_radius : int
+    18                                                                  Radius of the inner sphere, where random walkers start their path.
+    19                                                   outer_radius : 
+    20                                                                  Radius of the outer sphere. If a walker leaves the outer sphere, its walk will be stopped and a new walker will be released.
+    21                                                   """
+    22         1          2.0      2.0     33.3          self.grid = grid
+    23         1          2.0      2.0     33.3          self.center = center
+    24         1          1.0      1.0     16.7          self.inner_radius = inner_radius
+    25         1          1.0      1.0     16.7          self.outer_radius = outer_radius
+
+Total time: 2.03383 s
+File: /media/rherboth/Windows8_OS/Users/Radost Milena/Documents/1 UPPSALA/project_applmech/python_course/project/DLA/dla_3d/random_walk.py
+Function: initialize_walk at line 26
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    26                                               @profile
+    27                                               def initialize_walk(self):
+    28                                                   """
+    29                                                   Initializes the position of the random walkers.
+    30                                           
+    31                                                      Returns
+    32                                                      -------
+    33                                                      x, y, z : int
+    34                                                            Initial position of the random walker on the inner sphere.
+    35                                                   """
+    36     34999     146590.0      4.2      7.2          scale = np.random.rand()
+    37     34999      53207.0      1.5      2.6          theta = 180*scale
+    38     34999      30576.0      0.9      1.5          phi = 360*scale
+    39     34999     840854.0     24.0     41.3          x = np.int(np.rint(self.center[0] + self.inner_radius*np.sin(theta)*np.cos(phi)))
+    40     34999     521319.0     14.9     25.6          y = np.int(np.rint(self.center[1] + self.inner_radius*np.sin(theta)*np.sin(phi)))
+    41     34999     404569.0     11.6     19.9          z = np.int(np.rint(self.center[2] + self.inner_radius*np.cos(theta)))
+    42     34999      36717.0      1.0      1.8          return x, y, z
+
+Total time: 0 s
+File: /media/rherboth/Windows8_OS/Users/Radost Milena/Documents/1 UPPSALA/project_applmech/python_course/project/DLA/dla_3d/random_walk.py
+Function: test_vicinity at line 43
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    43                                               @profile
+    44                                               def test_vicinity(self, grid, center, x0, y0, z0):
+    45                                                   """
+    46                                                   Search surroundings of a point for filled points and check distance from center.
+    47                                           
+    48                                                      Parameters
+    49                                                      ----------
+    50                                                      grid : array-like
+    51                                                            Initialized grid with filled center
+    52                                                      center : array-like
+    53                                                            Position of the center
+    54                                                      x0, y0, z0 : int
+    55                                                            Position of the point in question
+    56                                           
+    57                                                      Returns
+    58                                                      -------
+    59                                                      dist :
+    60                                                           Distance of the point from the center.
+    61                                                      isum : int
+    62                                                           Sum of grid values in the vicinity of the point. Neighbour points can only vary in one point, i.e. [x0, y0, z+1] or [x0-1, y0, z0], but not [x0+1, y0+1, z0].
+    63                                                   """
+    64                                                   dist = np.sqrt((x0-center[0])**2 + (y0-center[1])**2 + (z0-center[2])**2)
+    65                                                   if dist > self.inner_radius:
+    66                                                       return 0, dist
+    67                                           
+    68                                                   isum = 0
+    69                                           
+    70                                                   array = [[1, 0, 0], [0, 1, 0], [0, 0, 1], [-1, 0, 0], [0, -1, 0], [0, 0, -1]]
+    71                                                   for a in array:
+    72                                                       new_indices = np.add([x0, y0, z0], a).astype(int)
+    73                                                       if grid[new_indices[0]][new_indices[1]][new_indices[2]] == 1:
+    74                                                           isum += 1
+    75                                           
+    76                                                   return isum, dist
+
+Total time: 596.862 s
+File: /media/rherboth/Windows8_OS/Users/Radost Milena/Documents/1 UPPSALA/project_applmech/python_course/project/DLA/dla_3d/random_walk.py
+Function: walk at line 77
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    77                                               @profile
+    78                                               def walk(self, grid):
+    79                                                   """
+    80                                                   Random walk of an initialized walker.
+    81                                           
+    82                                                      Returns
+    83                                                      -------
+    84                                                      grid : array-like
+    85                                                          Updated grid after random walker has finished.
+    86                                                   """
+    87     34999    2493620.0     71.2      0.4          x0, y0, z0 = self.initialize_walk()
+    88     34999      39774.0      1.1      0.0          starting_point = [x0, y0, z0]
+    89                                                   #isum, dist = self.test_vicinity(grid, self.center, x0, y0, z0)
+    90     34999    1697011.0     48.5      0.3          isum, dist = cy_test_vicinity(self, grid, self.center, x0, y0, z0)
+    91                                           
+    92   3802034    5459517.0      1.4      0.9          while dist <= self.outer_radius:
+    93                                           
+    94                                                       ## generate array where two numbers are zero and one is 1
+    95   3769292   12522886.0      3.3      2.1              array = np.zeros(3)
+    96   3769292   24565748.0      6.5      4.1              r = np.random.randint(0, 3, 1)
+    97   3769292  147641680.0     39.2     24.7              i = np.random.choice([-1, 1], 1)
+    98   3769292   24949206.0      6.6      4.2              array[r] = i
+    99                                           
+   100                                                       ## get position of starting point
+   101   3769292    5986523.0      1.6      1.0              indices = starting_point
+   102                                           
+   103                                                       ## add array to position of starting point
+   104   3769292   44255706.0     11.7      7.4              new_indices = np.add(indices, array).astype(int)
+   105                                           
+   106                                                       ## assign new position 
+   107   3769292    8159101.0      2.2      1.4              starting_point = [new_indices[0], new_indices[1], new_indices[2]]
+   108                                           
+   109                                                       ## get isum and dist and check for filled points in surrounding/at new position
+   110   3769292  293578647.0     77.9     49.2              isum, dist = cy_test_vicinity(self, grid, self.center, new_indices[0], new_indices[1], new_indices[2])
+   111                                           
+   112   3769292    4830280.0      1.3      0.8              if isum >= 1:
+   113      2257      12246.0      5.4      0.0                  grid[new_indices[0]][new_indices[1]][new_indices[2]] = 1
+   114      2257       2592.0      1.1      0.0                  break
+   115   3767035   20636436.0      5.5      3.5              elif grid[new_indices[0]][new_indices[1]][new_indices[2]] == 1:
+   116                                                           break
+   117                                                       else:
+   118                                                           continue
+   119                                           
+   120     34999      31059.0      0.9      0.0          return grid
+
